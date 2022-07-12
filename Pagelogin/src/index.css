@@ -1,0 +1,28 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fire Sans", "Droid Sans", "Helvetica Nue", sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.navheader {
+  width: 100%;
+  margin: 0;
+}
+
+.topnav {
+  background-color: #eee;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.topnav li a{
+  float: left;
+  padding: 10px;
+  min-height: 15px;
+}
+
+
