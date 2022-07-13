@@ -6,7 +6,7 @@ import { v4 } from 'uuid'
 
 export default function Comment() {
   const [cmt, setCmt] = useState([])
-  const [textInput, setTextInput] = useState("");
+  const [textInput, setTextInput] = useState("")
   const onTextInputchange = (e) => {
     setTextInput(e.target.value);
   }  
