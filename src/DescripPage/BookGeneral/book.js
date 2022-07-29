@@ -25,6 +25,23 @@ export default function Book() {
     fetchAuthor();
   }, []);
 
+  const data = {
+    "title": "Data Structures and Algorithms Made Easy",
+    "publishedDate": "11/11/2010",
+    "description": "Data Structures And Algorithms Made Easy: Data Structures and Algorithmic Puzzles is a book that offers solutions to complex data structures and algorithms. There are multiple solutions for each problem and the book is coded in C/C++, it comes handy as an interview and exam guide for computer scientists. It can be used as a reference manual by those readers in the computer science industry. This book serves as guide to prepare for interviews, exams, and campus work.",
+    "genres": [
+    "Math"
+    ],
+    "author": "62d0e74ee1145fb3e420b18c"
+  }
+
+  useEffect(() => {
+    const fetchTitle = async () => {
+        const res = await axios.post("http://localhost:5000/book/post", data);
+    };
+    fetchTitle();
+}, []);
+
   function getName() {
     Object.keys(Author).map(a => {
       if (Title.author === Author[a]._id && flag === 0)

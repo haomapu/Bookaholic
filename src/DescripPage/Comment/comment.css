@@ -4,6 +4,7 @@
     text-align: center;
     margin-left: 150px;
     margin-right: auto;
+    margin-bottom: 20px;
     background-color: pink;
     padding: 10px;
 }
@@ -12,7 +13,6 @@
     flex: 5;
     flex-direction: row;
     display: flex;
-    
     padding: 10px;
 }
 
