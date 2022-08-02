@@ -28,7 +28,7 @@ function LoginPage() {
                     <input type="submit" value="Login"/>
                 </div>
                 <div class="input">
-                    <p><a href="/#">Sign up</a></p>
+                    <p><a href="/register">Sign up</a></p>
                 </div>
                 <div class="input">
                     <p><a href="/#">Forget password </a></p>
