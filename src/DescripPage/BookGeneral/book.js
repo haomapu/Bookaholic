@@ -36,8 +36,6 @@ export default function Book() {
         });
     }
 
-    getName();
-
     return (
         <div className="BookDes">
             <img
