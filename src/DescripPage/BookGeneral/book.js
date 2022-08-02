@@ -1,80 +1,65 @@
-import React from 'react'
-import './book.css'
-import Sidebar from "../sidebar/sidebar";
+import React from "react";
+import "./book.css";
+// import Sidebar from "../sidebar/sidebar";
+import Sidebar from "../../components/sidebar/Sidebar";
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 var flag = 0;
-let AuthorName = ""
+let AuthorName = "";
 
 export default function Book() {
-  const [Title, setTitle] = useState("");
-  const [Author, setAuthor] = useState("");
-  
-  useEffect(() => {
-      const fetchTitle = async () => {
-          const res = await axios.get("http://localhost:5000/book");
-          setTitle(res.data[0]);
-      };
-      fetchTitle();
-  }, []);
-  useEffect(() => {
-    const fetchAuthor = async () => {
-        const res = await axios.get("http://localhost:5000/author");
-        setAuthor(res.data);
-    };
-    fetchAuthor();
-  }, []);
+    const [Title, setTitle] = useState("");
+    const [Author, setAuthor] = useState("");
 
-  const data = {
-    "title": "Data Structures and Algorithms Made Easy",
-    "publishedDate": "11/11/2010",
-    "description": "Data Structures And Algorithms Made Easy: Data Structures and Algorithmic Puzzles is a book that offers solutions to complex data structures and algorithms. There are multiple solutions for each problem and the book is coded in C/C++, it comes handy as an interview and exam guide for computer scientists. It can be used as a reference manual by those readers in the computer science industry. This book serves as guide to prepare for interviews, exams, and campus work.",
-    "genres": [
-    "Math"
-    ],
-    "author": "62d0e74ee1145fb3e420b18c"
-  }
+    useEffect(() => {
+        const fetchTitle = async () => {
+            const res = await axios.get("http://localhost:5000/book");
+            setTitle(res.data[0]);
+        };
+        fetchTitle();
+    }, []);
+    useEffect(() => {
+        const fetchAuthor = async () => {
+            const res = await axios.get("http://localhost:5000/author");
+            setAuthor(res.data);
+        };
+        fetchAuthor();
+    }, []);
 
-  useEffect(() => {
-    const fetchTitle = async () => {
-        const res = await axios.post("http://localhost:5000/book/post", data);
-    };
-    fetchTitle();
-}, []);
+    function getName() {
+        Object.keys(Author).map(a => {
+            if (Title.author === Author[a]._id && flag === 0) {
+                AuthorName = Author[a].name;
+                flag = 1;
+            }
+        });
+    }
 
-  function getName() {
-    Object.keys(Author).map(a => {
-      if (Title.author === Author[a]._id && flag === 0)
-      {
-        AuthorName = Author[a].name
-        flag = 1;
-      }
-        
-    })
-  }
-  
-  getName()
-
-  return (
-    <div className="BookDes">
-        <img className="BookPic" src= "https://images-na.ssl-images-amazon.com/images/I/61cfS2XXyEL.jpg" alt="Godfather" ></img>
-        <div className="Des">
-          <span className="Title">{Title.title}</span>
-          <span className="Author">Author: {AuthorName}</span>
-          <span className="Description">{Title.description}</span>   
-          <div className="rateStar">
-            <span className="fa fa-star checked"></span>
-            <span className="fa fa-star checked"></span>
-            <span className="fa fa-star checked"></span>
-            <span className="fa fa-star"></span>
-            <span className="fa fa-star"></span>
-          </div>
-          <div className="Fav">    
-            <button className="FavBut">Favorite</button>
-            <button className="FavBut">Wishlist</button>
-          </div>   
+    return (
+        <div className="BookDes">
+            <img
+                className="BookPic"
+                src="https://images-na.ssl-images-amazon.com/images/I/61cfS2XXyEL.jpg"
+                alt="Godfather"
+            ></img>
+            <div className="Des">
+                <span className="Title">{Title.title}</span>
+                <span className="Author">Author: {AuthorName}</span>
+                <span className="Description">{Title.description}</span>
+                <div className="rateStar">
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star"></span>
+                    <span className="fa fa-star"></span>
+                </div>
+                <div className="Fav">
+                    <button className="FavBut">Favorite</button>
+                    <button className="FavBut">Wishlist</button>
+                </div>
+            </div>
+            <Sidebar />
         </div>
-        <Sidebar /> 
-    </div>
-  )
+    );
 }
