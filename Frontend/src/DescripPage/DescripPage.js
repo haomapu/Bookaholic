@@ -1,14 +1,15 @@
 import Book from "./BookGeneral/book";
-// import Header from "./Header/header";
 import Header from "../components/header/Header";
-import TopBar from "./Topbar/topbar";
 import Comment from "./Comment/comment";
+import Recommend from "./recommend/Recommend";
+
+
 function DescripPage() {
     return (
         <div>
-            {/* <TopBar /> */}
             <Header />
             <Book />
+            <Recommend />
             <Comment />
         </div>
     );

@@ -1,0 +1,16 @@
+.recommends {
+    flex: 9;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    border: inset;
+
+    width: 65%;
+    border: inset;
+    text-align: center;
+    margin-left: 150px;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+
+}

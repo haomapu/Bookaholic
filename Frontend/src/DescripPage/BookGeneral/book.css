@@ -42,6 +42,7 @@
     flex-direction: row;
     display: flex;
     font-size: 16px;
+    float: left;
 }
 
 .FavBut {
@@ -54,10 +55,16 @@
     border-radius: 10%
 }
 
-.rateStar {
-    font-size: 25px;
-}
-
-.checked {
+.rateStar button {
+    font-size: 40px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .on {
     color: orange;
+  }
+  .off {
+    color: #ccc;
 }
