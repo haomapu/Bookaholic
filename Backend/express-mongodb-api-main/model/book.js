@@ -5,26 +5,24 @@ const bookSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-
-    rating:{
-        type: [],
+    bookImg: {
+        type: String,
     },
-
+    description: {
+        type: String
+    },
     publishedDate: {
         type: String,
     },
-
-    description: {
-        type: String,
-    },
-
-    genres: {
+    genre: {
         type: [String],
     },
-
     author: {
         type: String,
     },
+    rating: {
+        type: [Number]
+    }
 });
 
 let Book = mongoose.model("Book", bookSchema);
