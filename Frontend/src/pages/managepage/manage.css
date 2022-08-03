@@ -1,0 +1,24 @@
+.manage {
+    display: flex;
+}
+
+.manageTitles {
+    padding: 20px;
+    flex: 9;
+}
+
+.administrationTitle {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: lightcoral;
+    border-bottom: 10px solid #020102;
+    width: 60%;
+}
+
+.managementTitle {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: lightcoral;
+    border-bottom: 10px solid #020102;
+    width: 60%;
+}
