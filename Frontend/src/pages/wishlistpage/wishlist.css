@@ -1,0 +1,16 @@
+.wishList {
+    display: flex;
+}
+
+.wishListP {
+    padding: 20px;
+    flex: 9;
+}
+
+.wishListTitle {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: lightcoral;
+    border-bottom: 10px solid #020102;
+    width: 60%;
+}
