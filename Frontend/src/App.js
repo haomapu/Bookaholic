@@ -5,15 +5,12 @@ import RegisterPage from "./RegisterPage/RegisterPage";
 import DescripPage from "./DescripPage/DescripPage";
 import Settings from "./pages/settingspage/Settings";
 import Manage from "./pages/managepage/Manage";
-<<<<<<< HEAD
-=======
 import WishList from "./pages/wishlistpage/WishList";
 
->>>>>>> 19c9193593d37dd1e613720c6389346e1026cf8b
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-    const currentUser = false;
+    const currentUser = true;
 
     return (
         <Router>

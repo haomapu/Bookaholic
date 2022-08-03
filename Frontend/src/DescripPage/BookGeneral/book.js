@@ -21,7 +21,7 @@ export default function Book({SpecBook}) {
     }, []);
 
     function getName() {
-        Author.map(a => {
+        Object.keys(Author).map(a => {
             if (SpecBook.author === Author[a]._id && flag === 0) {
                 AuthorName = Author[a].name;
                 flag = 1;
