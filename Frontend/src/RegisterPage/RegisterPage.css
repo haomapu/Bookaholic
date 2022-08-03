@@ -44,7 +44,7 @@
     object-fit: cover;
   }
   
-  .content{
+  .contentRegister{
     display: flex;
     justify-content: left;
     align-items: center;
@@ -52,11 +52,11 @@
     height: 100%;
   }
   
-  .content .form{
+  .contentRegister .form{
     width: 50%;
   }
   
-  .content .form h2{
+  .contentRegister .form h2{
 
     color: #607d8b;
     font-weight: 600;
@@ -69,11 +69,11 @@
     letter-spacing: 1px;
   }
   
-  .content .form .input{
+  .contentRegister .form .input{
     margin-bottom: 20px;
   }
 
-  .content .form .input span{
+  .contentRegister .form .input span{
     font-size: 16px;
     margin-bottom: 5px;
     display: inline-block;
@@ -82,7 +82,7 @@
   }
   
   
-  .content .form .input input{
+  .contentRegister .form .input input{
     width: 100%;
     padding: 10px 20px;
     outline: none;
@@ -95,7 +95,7 @@
     border-radius: 30px;
   }
   
-  .content .form .input button[type="submit"]{
+  .contentRegister .form .input button[type="submit"]{
     width: 70%;
     padding: 10px 20px;
     margin-left: 45px;
@@ -114,15 +114,15 @@
     border-radius: 30px;
   }
   
-  .content .form .input input[type="submit"]:hover{
+  .contentRegister .form .input input[type="submit"]:hover{
     background: #f53677;
   }
   
-  .content .form .input p a{
+  .contentRegister .form .input p a{
     color: #ff4584;
   }
 
-  .content .form .footer{
+  .contentRegister .form .footer{
     text-align: center;
     margin: 40px 0px 10px;
     font-weight: 200;

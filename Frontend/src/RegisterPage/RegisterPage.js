@@ -58,7 +58,7 @@ function RegisterPage() {
         <div className = "icon">
             <img src = "./BookStore.png" alt = "Logo"/>
         </div>
-        <div className = "content">
+        <div className = "contentRegister">
             <div className = "form">
                 <h2> Sign up </h2>
                 <form action = "">

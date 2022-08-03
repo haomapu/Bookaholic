@@ -41,7 +41,7 @@ function LoginPage() {
             <div className="icon">
                 <img src="./BookStore.png" alt="Logo" />
             </div>
-            <div className="content">
+            <div className="contentLogin">
                 <div className="form">
                     <h2> Sign in </h2>
                     <form action="">
@@ -69,13 +69,12 @@ function LoginPage() {
                         </div>
                         <div className="input">
                             <button type="submit" onClick={onClickBtn}>
-                                {" "}
-                                Login{" "}
+                                Login
                             </button>
                         </div>
                         <div className="input">
                             <p>
-                                <a href="/#"> Sign up </a>
+                                <a href="/register"> Sign up </a>
                             </p>
                         </div>
                         <div className="input">
