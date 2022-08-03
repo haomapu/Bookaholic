@@ -22,6 +22,10 @@ const bookSchema = new mongoose.Schema({
     },
     rating: {
         type: [Number]
+    },
+    pending: {
+        type: Boolean,
+        default: false
     }
 });
 
