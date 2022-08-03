@@ -64,27 +64,27 @@ function RegisterPage() {
                 <form action = "">
                     <div className = "input">
                         <span> First Name </span>
-                        <input type = "text" name = ""/>
+                        <input type = "text" name = "" placeholder='Enter first name'/>
                     </div>
                     <div className = "input">
                         <span> Last Name </span>
-                        <input type = "text" name = ""/>
+                        <input type = "text" name = "" placeholder='Enter last name'/>
                     </div>
                     <div className = "input">
                         <span> E-mail </span>
-                        <input type = "text" name = ""/>
+                        <input type = "text" name = "" placeholder='Enter your email'/>
                     </div>
                     <div className = "input">
                         <span> Username </span>
-                        <input type = "text" name = ""/>
+                        <input type = "text" name = "" placeholder='Enter username'/>
                     </div>
                     <div className = "input">
                         <span> Password </span>
-                        <input type = "currentpassword" name = ""/>
+                        <input type = "currentpassword" name = "" placeholder='Enter password'/>
                     </div>
                     <div className = "input">
                         <span> Confirm Password </span>
-                        <input type = "currentpassword" name = ""/>
+                        <input type = "currentpassword" name = "" placeholder='Enter confirm password'/>
                     </div>
                     <div className = "input">
                         <button type = "submit" onClick = {onClickBtn}> Register </button>

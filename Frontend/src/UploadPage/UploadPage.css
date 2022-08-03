@@ -1,0 +1,105 @@
+.upload {
+    display: flex;
+}
+
+.content {
+    margin-top: 20px; 
+    margin-left: 50px;
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 10px solid #020102;
+    width: 60%;
+}
+
+.content h2{
+    font-size: 50px;
+    margin-left: 30px;
+}
+
+.picture{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.picture  img {
+    width: 140px;
+    height: 170px;
+    object-fit: cover;
+}
+
+.picture  button[type = "add"]{
+    width: 80px;
+    height: 20px;
+    margin-top: 140px;
+    margin-left: 20px;
+    background: pink;
+    color: black;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.picture  button[type="addPic"]:hover{
+    background: pink;
+  }
+
+.Form {
+    width: 50%;
+    margin-left: 80px;
+}
+
+.Form h2{
+    font-size: 20px;
+}
+
+.Form input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 80%;
+    padding: 10px 20px;
+    outline: none;
+    border: 1px solid #607d8b;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #607d8b;
+    background: transparent;
+    border-radius: 10px;
+}
+
+.Form .input input[type = "description"]{
+    padding: 50px 20px;
+}
+
+.Form  button[type = "upload"]{
+    width: 40%;
+    height: 40px;
+    background: pink;
+    margin-left: 19%;
+    margin-top: 20px;
+    color: black;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.tick input[type = "checkbox"]{
+    display: flex;
+    width: 20px;
+    align-items: center;
+    background-color: #ffffff;
+    color: black;
+    margin-left: 60px;
+    cursor: pointer;
+}
+
+.tick h3{
+    font-size: 15px;
+    width: 50%;
+    margin-left: 20px;
+}
+
+
