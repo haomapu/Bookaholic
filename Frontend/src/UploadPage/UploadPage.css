@@ -1,34 +1,33 @@
 .upload {
     display: flex;
 }
+.uploadTitle {
+    padding: 20px;
+    flex: 9;
+}
 
 .content {
-    margin-top: 20px; 
-    margin-left: 50px;
-    font-family: 'Roboto', sans-serif;
-    border-bottom: 10px solid #020102;
-    width: 60%;
-}
-
-.content h2{
     font-size: 50px;
-    margin-left: 30px;
+    font-family: "Roboto", sans-serif;
+    border-bottom: 10px solid #020102;
+    width: 100%;
+    color: lightcoral;
 }
 
-.picture{
+.picture {
     display: flex;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 20px;
 }
 
-.picture  img {
+.picture img {
     width: 140px;
     height: 170px;
     object-fit: cover;
 }
 
-.picture  button[type = "add"]{
+.picture button[type="add"] {
     width: 80px;
     height: 20px;
     margin-top: 140px;
@@ -41,20 +40,20 @@
     cursor: pointer;
 }
 
-.picture  button[type="addPic"]:hover{
+.picture button[type="addPic"]:hover {
     background: pink;
-  }
+}
 
 .Form {
     width: 50%;
     margin-left: 80px;
 }
 
-.Form h2{
+.Form h2 {
     font-size: 20px;
 }
 
-.Form input{
+.Form input {
     margin-top: 10px;
     margin-bottom: 10px;
     width: 80%;
@@ -68,11 +67,13 @@
     border-radius: 10px;
 }
 
-.Form .input input[type = "description"]{
+.Form .input input[type="description"] {
+    word-wrap: break-word;
+
     padding: 50px 20px;
 }
 
-.Form  button[type = "upload"]{
+.Form button[type="upload"] {
     width: 40%;
     height: 40px;
     background: pink;
@@ -86,7 +87,7 @@
     cursor: pointer;
 }
 
-.tick input[type = "checkbox"]{
+.tick input[type="checkbox"] {
     display: flex;
     width: 20px;
     align-items: center;
@@ -96,10 +97,8 @@
     cursor: pointer;
 }
 
-.tick h3{
+.tick h3 {
     font-size: 15px;
     width: 50%;
     margin-left: 20px;
 }
-
-

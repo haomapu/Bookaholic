@@ -6,6 +6,7 @@ import DescripPage from "./DescripPage/DescripPage";
 import Settings from "./pages/settingspage/Settings";
 import Manage from "./pages/managepage/Manage";
 import WishList from "./pages/wishlistpage/WishList";
+import Upload from "./UploadPage/UploadPage";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -30,14 +31,15 @@ function App() {
                     element={currentUser ? <Settings /> : <LoginPage />}
                 />
                 <Route
+                    path="/upload"
+                    element={currentUser ? <Upload /> : <LoginPage />}
+                />
+                <Route
                     path="/manage"
                     element={currentUser ? <Manage /> : <LoginPage />}
                 />
 
-                <Route 
-                    path="/book/:id" 
-                    element={<DescripPage />} 
-                />
+                <Route path="/book/:id" element={<DescripPage />} />
 
                 <Route
                     path="/wishlist"
