@@ -33,7 +33,7 @@ const bookController = {
     updateBook : async (req, res) => {
         try {
             const book = await Book.findById(req.params.id);
-            await book.updateOne({$set : req.body});
+            await book.updateOne({$set: req.body});
             res.status(200).json("Update Successfully");
         }catch(err) {
             res.status(500).json(err);

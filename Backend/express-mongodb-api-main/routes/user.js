@@ -13,4 +13,7 @@ router.put('/:id', userController.updateUser);
 
 router.delete('/:id', userController.deleteUser);
 
+router.put('/:id/wishlist', userController.updateWishlist);
+
+router.put('/:id/wishlist/remove', userController.deleteBookFromWishList);
 module.exports = router;
