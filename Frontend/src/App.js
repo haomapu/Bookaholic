@@ -5,11 +5,11 @@ import RegisterPage from "./RegisterPage/RegisterPage";
 import DescripPage from "./DescripPage/DescripPage";
 import Settings from "./pages/settingspage/Settings";
 import Manage from "./pages/managepage/Manage";
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-    const currentUser = true;
+    const currentUser = false;
+
     return (
         <Router>
             <TopBar />
@@ -31,7 +31,13 @@ function App() {
                     path="/manage"
                     element={currentUser ? <Manage /> : <LoginPage />}
                 />
-                <Route path="/book/abc" element={<DescripPage />} />
+
+                <Route 
+                    path="/book/:id" 
+                    element={<DescripPage />} 
+                />
+
+
             </Routes>
         </Router>
     );

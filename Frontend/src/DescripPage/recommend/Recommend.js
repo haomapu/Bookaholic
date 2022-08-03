@@ -7,7 +7,7 @@ export default function Recommend() {
     const [posts, setPosts] = useState([]);
         useEffect(() => {
         const fetchPosts = async () => {
-            const res = await axios.get("http://localhost:5000/book");
+            const res = await axios.get("http://localhost:8000/book");
             setPosts(res.data);
         };
         fetchPosts();

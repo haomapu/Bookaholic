@@ -7,36 +7,28 @@ import axios from "axios";
 var flag = 0;
 let AuthorName = "";
 
-export default function Book() {
-    const [Title, setTitle] = useState("");
+export default function Book({SpecBook}) {
     const [Author, setAuthor] = useState("");
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
-    useEffect(() => {
-        const fetchTitle = async () => {
-            const res = await axios.get("http://localhost:5000/book");
-            setTitle(res.data[0]);
-        };
-        fetchTitle();
-    }, []);
+
     useEffect(() => {
         const fetchAuthor = async () => {
-            const res = await axios.get("http://localhost:5000/author");
+            const res = await axios.get("http://localhost:8000/author");
             setAuthor(res.data);
         };
         fetchAuthor();
     }, []);
 
     function getName() {
-        Object.keys(Author).map(a => {
-            if (Title.author === Author[a]._id && flag === 0) {
+        Author.map(a => {
+            if (SpecBook.author === Author[a]._id && flag === 0) {
                 AuthorName = Author[a].name;
                 flag = 1;
             }
-            return;
         });
     }
-
+    
     const StarRating = () => {
         
         return (
@@ -61,6 +53,8 @@ export default function Book() {
         );
       };
     getName()
+
+
     return (
         <div className="BookDes">
             <img
@@ -69,9 +63,9 @@ export default function Book() {
                 alt="Godfather"
             ></img>
             <div className="Des">
-                <span className="Title">{Title.title}</span>
+                <span className="Title">{SpecBook.title}</span>
                 <span className="Author">Author: {AuthorName}</span>
-                <span className="Description">{Title.description}</span>
+                <span className="Description">{SpecBook.description}</span>
                 <div>
                     <div className="Fav">
                         <button className="FavBut">Favorite</button>
