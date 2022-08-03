@@ -18,7 +18,7 @@ export default function Post({ post }) {
                     </span>
                 </div>
                 <span className="postTitle">
-                    <Link to="/book/abc" className="link">
+                    <Link to={"/book/" + post.title} className="link">
                         {post.title}
                     </Link>
                 </span>
