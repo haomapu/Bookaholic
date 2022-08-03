@@ -4,10 +4,12 @@ import LoginPage from "./LoginPage/LoginPage";
 import RegisterPage from "./RegisterPage/RegisterPage";
 import DescripPage from "./DescripPage/DescripPage";
 import Settings from "./pages/settingspage/Settings";
+import Manage from "./pages/managepage/Manage";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-    const currentUser = false;
+    const currentUser = true;
     return (
         <Router>
             <TopBar />
@@ -25,9 +27,11 @@ function App() {
                     path="/settings"
                     element={currentUser ? <Settings /> : <LoginPage />}
                 />
-                <Route 
-                    path="/book/abc" element = {<DescripPage />} 
+                <Route
+                    path="/manage"
+                    element={currentUser ? <Manage /> : <LoginPage />}
                 />
+                <Route path="/book/abc" element={<DescripPage />} />
             </Routes>
         </Router>
     );
