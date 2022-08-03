@@ -1,0 +1,72 @@
+.wishBook {
+    display: flex;
+    flex-direction: row;
+    border: inset;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.wishBookImg {
+    width: 250px;
+    height: 250px;
+    margin: 0;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.wishBookInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wishBookTitle {
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 900;
+    margin-top: 15px;
+}
+
+.wishBookAuthor {
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.wishBookDate {
+    font-family: "Lora", serif;
+    font-style: italic;
+    font-size: 15px;
+    font-weight: 400;
+    color: #999999;
+    margin-top: 15px;
+}
+
+.RButtons {
+    display: flex;
+}
+
+.RButtonTitle {
+    align-self: center;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: teal;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.RButtonTitle:hover {
+    background-color: rgb(1, 114, 114);
+}

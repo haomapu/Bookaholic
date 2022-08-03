@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./topbar.css";
 
 export default function TopBar() {
-    const user = false;
+    const user = true;
     return (
         <div className="top">
             <div className="topLeft">
@@ -19,10 +19,42 @@ export default function TopBar() {
                     </li>
                     <li className="topListItem">ABOUT</li>
                     <li className="topListItem">CONTACT</li>
-                    <li className="topListItem">WRITE</li>
-                    <li className="topListItem">
-                        {user && <li className="topListItem">LOGOUT</li>}
-                    </li>
+                    <>
+                        {user && (
+                            <li className="topListItem">
+                                <Link className="link" to="/wishlist">
+                                    WISHLIST
+                                </Link>
+                            </li>
+                        )}
+                    </>
+                    <>
+                        {user && (
+                            <li className="topListItem">
+                                <Link className="link" to="/upload">
+                                    UPLOAD
+                                </Link>
+                            </li>
+                        )}
+                    </>
+                    <>
+                        {user && (
+                            <li className="topListItem">
+                                <Link className="link" to="/manage">
+                                    MANAGE
+                                </Link>
+                            </li>
+                        )}
+                    </>
+                    <>
+                        {user && (
+                            <li className="topListItem">
+                                <Link className="link" to="/">
+                                    LOGOUT
+                                </Link>
+                            </li>
+                        )}
+                    </>
                 </ul>
             </div>
             <div className="topRight">

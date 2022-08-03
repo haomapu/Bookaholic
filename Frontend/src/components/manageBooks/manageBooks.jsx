@@ -19,7 +19,7 @@ export default function manageBooks({ book }) {
             </div>
             <div className="buttons">
                 <button className="buttonTitle">
-                    <Link className="link" to="/book/abc">
+                    <Link className="link" to={"/book/" + book.title}>
                         View
                     </Link>
                 </button>
