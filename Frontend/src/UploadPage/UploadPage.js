@@ -78,7 +78,7 @@ function UploadPage() {
                                 <input
                                     type="checkbox"
                                     id="option-b"
-                                    value="Seflhelp"
+                                    value="Selfhelp"
                                 />
                             </h3>
                             <h3>

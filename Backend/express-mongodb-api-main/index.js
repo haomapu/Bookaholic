@@ -8,11 +8,11 @@ const userRoutes = require("./routes/user.js");
 const bookRoutes = require("./routes/book.js");
 
 const app = express();
-const PORT = 5000;
+const PORT = 8000;
 dotenv.config();
 
 //CONNECT DATABASE
-mongoose.connect((process.env.MONGODB_URL), () => {
+mongoose.connect(process.env.MONGODB_URL, () => {
     console.log("Connected to MongoDB");
 });
 
@@ -24,4 +24,6 @@ app.use(morgan("common"));
 app.use("/user", userRoutes);
 app.use("/book", bookRoutes);
 
-app.listen(PORT, () => console.log(`Server is running on port: http://localhost:${PORT}`));
+app.listen(PORT, () =>
+    console.log(`Server is running on port: http://localhost:${PORT}`)
+);
