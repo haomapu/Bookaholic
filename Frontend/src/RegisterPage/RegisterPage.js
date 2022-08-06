@@ -3,11 +3,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 function RegisterPage() {
+    function postAccount(test) {
+        axios.post("http://localhost:8000/user", test)
+    }
+    
     const [account, setAccount] = useState("");
 
     useEffect(() => {
         const fetchAccount = async () => {
-            const res = await axios.get("http://localhost:5050/user");
+            const res = await axios.get("http://localhost:8000/user");
             setAccount(res.data);
         };
         fetchAccount();
@@ -61,8 +65,18 @@ function RegisterPage() {
         }
 
         if (flag === 0) {
-            alert("Register successful!");
+            var test = {
+                firstName: Firstname,
+                lastName: Lastname,
+                username: Username,
+                password: Password,
+                email: Email
+            }    
+            postAccount(test)
+            console.log(test)
         }
+        alert("Register successful!");
+
     }
 
     return (

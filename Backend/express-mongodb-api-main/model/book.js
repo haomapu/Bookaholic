@@ -7,6 +7,7 @@ const bookSchema = new mongoose.Schema({
     },
     bookImg: {
         type: String,
+        default: null
     },
     description: {
         type: String
@@ -21,7 +22,8 @@ const bookSchema = new mongoose.Schema({
         type: String,
     },
     rating: {
-        type: [Number]
+        type: [Number],
+        default: null
     },
     pending: {
         type: Boolean,

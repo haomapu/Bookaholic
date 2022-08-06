@@ -46,6 +46,7 @@ const accountSchema = new mongoose.Schema({
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: Book,
+            default: null
         },
     ]
 });

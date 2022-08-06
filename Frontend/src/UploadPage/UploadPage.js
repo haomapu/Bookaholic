@@ -9,21 +9,11 @@ function UploadPage() {
     var title = "";
     var author = "";
     var description = "";
+    
 
-    const test = {
-        title: title,
-        publishedDate: null,
-        description: description,
-        genres: categories,
-        author: author,
-    };
-
-    useEffect(() => {
-        const postBook = async () => {
-            const res = await axios.post("http://localhost:8000/book/", test);
-        };
-        postBook();
-    }, []);
+    function postBook(test) {
+        axios.post("http://localhost:8000/book/", test)
+    }
 
     function onClickBtn() {
         var arr = document.getElementsByTagName("input");
@@ -33,12 +23,20 @@ function UploadPage() {
         document
             .querySelectorAll('input[type = "checkbox"]:checked')
             .forEach(cb => categories.push(cb.value));
-        alert(title);
-        alert(author);
-        alert(description);
-        alert(categories);
-    }
 
+        var test = {
+            title: title,
+            publishedDate: null,
+            description: description,
+            genre: categories,
+            author: author
+        }    
+        postBook(test)
+        console.log(test)
+        alert(title)
+        alert(author)
+    }
+    
     return (
         <>
             <Header />
