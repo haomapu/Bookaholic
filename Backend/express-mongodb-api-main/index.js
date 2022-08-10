@@ -4,7 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
-const authorRoutes = require("./routes/author.js");
+const userRoutes = require("./routes/user.js");
 const bookRoutes = require("./routes/book.js");
 
 const app = express();
@@ -21,7 +21,7 @@ app.use(cors());
 app.use(morgan("common"));
 
 //ROUTES
-app.use("/author", authorRoutes);
+app.use("/user", userRoutes);
 app.use("/book", bookRoutes);
 
 app.listen(PORT, () =>

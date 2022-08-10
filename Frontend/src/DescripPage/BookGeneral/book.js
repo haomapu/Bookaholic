@@ -8,26 +8,8 @@ var flag = 0;
 let AuthorName = "";
 
 export default function Book({SpecBook}) {
-    const [Author, setAuthor] = useState("");
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
-
-    useEffect(() => {
-        const fetchAuthor = async () => {
-            const res = await axios.get("http://localhost:8000/author");
-            setAuthor(res.data);
-        };
-        fetchAuthor();
-    }, []);
-
-    function getName() {
-        Object.keys(Author).map(a => {
-            if (SpecBook.author === Author[a]._id && flag === 0) {
-                AuthorName = Author[a].name;
-                flag = 1;
-            }
-        });
-    }
     
     const StarRating = () => {
         
@@ -51,9 +33,7 @@ export default function Book({SpecBook}) {
                 <span className="rating">({rating})</span>
           </div>
         );
-      };
-    getName()
-
+      };    
 
     return (
         <div className="BookDes">
@@ -64,11 +44,10 @@ export default function Book({SpecBook}) {
             ></img>
             <div className="Des">
                 <span className="Title">{SpecBook.title}</span>
-                <span className="Author">Author: {AuthorName}</span>
+                <span className="Author">Author: {SpecBook.author}</span>
                 <span className="Description">{SpecBook.description}</span>
                 <div>
                     <div className="Fav">
-                        <button className="FavBut">Favorite</button>
                         <button className="FavBut">Wishlist</button>
                     </div>
                     <div className="rateStar">

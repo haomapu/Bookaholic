@@ -1,10 +1,9 @@
-.env
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
+/Backend/express-mongodb-api-main/node_modules
+/Backend/express-mongodb-api-main/.env
+/Frontend/node_modules
+/Frontend/.pnp
+/Frontend/.pnp.js
 
 # testing
 /coverage

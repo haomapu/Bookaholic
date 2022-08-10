@@ -1,7 +1,10 @@
 # dependencies
+/Backend/express-mongodb-api-main/node_modules
+/Backend/express-mongodb-api-main/.env
 /Frontend/node_modules
 /Frontend/.pnp
 /Frontend/.pnp.js
+/Frontend/build
 
 # testing
 /coverage
