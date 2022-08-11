@@ -27,11 +27,22 @@
     object-fit: cover;
 }
 
-.picture button[type="add"] {
+.picture .form {
+    margin-left: 10px;
+}
+
+.picture .form input {
+    width: 350px;
+    height: 30px;
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+.picture .form button[type="add"] {
     width: 80px;
     height: 20px;
-    margin-top: 140px;
     margin-left: 20px;
+    margin-right: 50px;
     background: pink;
     color: black;
     outline: none;
