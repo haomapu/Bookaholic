@@ -87,13 +87,13 @@ function LoginPage() {
                     <h3> Login With </h3>
                     <ul className="icon">
                         <li>
-                            <i className="topIconF fa-brands fa-facebook-square"></i>
+                            <i className="topIcon fa-brands fa-facebook-square"></i>
                         </li>
                         <li>
-                            <i className="topIconG fa-brands fa-google"></i>
+                            <i className="topIcon fa-brands fa-google"></i>
                         </li>
                         <li>
-                            <i className="topIconT fa-brands fa-twitter-square"></i>
+                            <i className="topIcon fa-brands fa-twitter-square"></i>
                         </li>
                     </ul>
                     <div className="footer">&copy; 2022 Bookaholic Inc</div>
