@@ -23,9 +23,11 @@ export default function Manage() {
                             Administration
                         </span>
                         <div className="listRequests">
-                            <Request />
-                            <Request />
-                            <Request />
+                            {books.map((b, i) => {
+                                if (b.pending === false)
+                                    return <Request book={b} key={i} />;
+                                return null;
+                            })}
                         </div>
                     </div>
                     <div className="management">

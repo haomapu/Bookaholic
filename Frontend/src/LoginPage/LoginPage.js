@@ -27,6 +27,7 @@ function LoginPage() {
                 alert("Login successful!");
                 flag = 1;
             }
+            return null;
         });
         if (flag === 0) {
             alert("Login fail!");
@@ -36,7 +37,7 @@ function LoginPage() {
     return (
         <section>
             <div className="img-bg">
-                <img src="./image.jpg" alt="Picture" />
+                <img src="./image.jpg" alt="anh" />
             </div>
             <div className="icon">
                 <img src="./BookStore.png" alt="Logo" />
@@ -86,16 +87,13 @@ function LoginPage() {
                     <h3> Login With </h3>
                     <ul className="icon">
                         <li>
-                            <i
-                                className="fa fa-facebook"
-                                aria-hidden="true"
-                            ></i>
+                            <i className="topIcon fa-brands fa-facebook-square"></i>
                         </li>
                         <li>
-                            <i className="fa fa-google" aria-hidden="true"></i>
+                            <i className="topIcon fa-brands fa-google"></i>
                         </li>
                         <li>
-                            <i className="fa fa-twitter" aria-hidden="true"></i>
+                            <i className="topIcon fa-brands fa-twitter-square"></i>
                         </li>
                     </ul>
                     <div className="footer">&copy; 2022 Bookaholic Inc</div>

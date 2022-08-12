@@ -1,45 +1,42 @@
 import React from "react";
 import "./book.css";
 import Sidebar from "../../components/sidebar/Sidebar";
+import { useState } from "react";
 
-import { useEffect, useState } from "react";
-import axios from "axios";
-var flag = 0;
-let AuthorName = "";
-
-export default function Book({SpecBook}) {
+export default function Book({ SpecBook }) {
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
-    
+
     const StarRating = () => {
-        
         return (
-          <div className="star-rating">
-            {[...Array(5)].map((star, index) => {
-              index += 1;
-              return (
-                <button
-                  type="button"
-                  key={index}
-                  className={index <= (hover || rating) ? "on" : "off"}
-                  onClick={() => setRating(index)}
-                  onMouseEnter={() => setHover(index)}
-                  onMouseLeave={() => setHover(rating)}
-                >
-                  <span className="star">&#9733;</span>
-                </button>
-              );
-            })}
+            <div className="star-rating">
+                {[...Array(5)].map((star, index) => {
+                    index += 1;
+                    return (
+                        <button
+                            type="button"
+                            key={index}
+                            className={
+                                index <= (hover || rating) ? "on" : "off"
+                            }
+                            onClick={() => setRating(index)}
+                            onMouseEnter={() => setHover(index)}
+                            onMouseLeave={() => setHover(rating)}
+                        >
+                            <span className="star">&#9733;</span>
+                        </button>
+                    );
+                })}
                 <span className="rating">({rating})</span>
-          </div>
+            </div>
         );
-      };    
+    };
 
     return (
         <div className="BookDes">
             <img
                 className="BookPic"
-                src="https://images-na.ssl-images-amazon.com/images/I/61cfS2XXyEL.jpg"
+                src={SpecBook.bookImg}
                 alt="Godfather"
             ></img>
             <div className="Des">

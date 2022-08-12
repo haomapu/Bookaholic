@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 
 function RegisterPage() {
     function postAccount(test) {
-        axios.post("http://localhost:8000/user", test)
+        axios.post("http://localhost:8000/user", test);
     }
-    
+
     const [account, setAccount] = useState("");
 
     useEffect(() => {
@@ -57,6 +57,7 @@ function RegisterPage() {
                 alert("Username already exists!");
                 flag = 3;
             }
+            return null;
         });
 
         if (Password !== ConfirmPass && flag === 0) {
@@ -70,19 +71,18 @@ function RegisterPage() {
                 lastName: Lastname,
                 username: Username,
                 password: Password,
-                email: Email
-            }    
-            postAccount(test)
-            console.log(test)
+                email: Email,
+            };
+            postAccount(test);
+            console.log(test);
         }
         alert("Register successful!");
-
     }
 
     return (
         <section>
             <div className="img-bg">
-                <img src="./image.jpg" alt="Picture" />
+                <img src="./image.jpg" alt="anh" />
             </div>
             <div className="icon">
                 <img src="./BookStore.png" alt="Logo" />
