@@ -5,6 +5,8 @@ const router = express.Router();
 
 router.get('/', bookController.getAllBook);
 
+router.get('/pending', bookController.getBookPending);
+
 router.get('/:id', bookController.getBook);
 
 router.post('/', bookController.createBook);

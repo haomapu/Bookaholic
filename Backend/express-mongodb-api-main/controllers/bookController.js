@@ -34,6 +34,15 @@ const bookController = {
         }
     },
 
+    getBookPending : async(req, res) => {
+        try {
+            const book = await Book.find({'pending': true});
+            res.status(200).json(book);
+        }catch (err) {
+            res.status(500).json(err);
+        }
+    },
+
     updateBook : async (req, res) => {
         try {
             const book = await Book.findById(req.params.id);
