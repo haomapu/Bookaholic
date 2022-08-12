@@ -24,7 +24,19 @@ function UploadPage() {
         document
             .querySelectorAll('input[type = "checkbox"]:checked')
             .forEach(cb => categories.push(cb.value));
-
+        var flag = 0;
+        if(title === ""){
+            alert("Can't fill blank title");
+            flag = 1
+        }
+        if(author === ""){
+            alert("Can't fill blank author");
+            flag = 1
+        }
+        if(description === ""){
+            alert("Can't fill blank description");
+            flag = 1
+        }
         var test = {
             title: title,
             publishedDate: null,
