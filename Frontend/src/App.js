@@ -7,11 +7,12 @@ import Settings from "./pages/settingspage/Settings";
 import Manage from "./pages/managepage/Manage";
 import WishList from "./pages/wishlistpage/WishList";
 import Upload from "./UploadPage/UploadPage";
+import Search from "./SearchPage/Search";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-    const currentUser = false;
+    const currentUser = true;
 
     return (
         <Router>
@@ -44,6 +45,11 @@ function App() {
                 <Route
                     path="/wishlist"
                     element={currentUser ? <WishList /> : <LoginPage />}
+                />
+
+                <Route
+                    path="/search"
+                    element={<Search />}
                 />
             </Routes>
         </Router>

@@ -80,7 +80,9 @@ export default function TopBar() {
                         </li>
                     </ul>
                 )}
-                <i className="topSearchIcon fa-solid fa-magnifying-glass"></i>
+                <Link className="link" to="/search">
+                    <i className="topSearchIcon fa-solid fa-magnifying-glass"></i>
+                </Link>
             </div>
         </div>
     );

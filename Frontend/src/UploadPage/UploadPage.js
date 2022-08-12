@@ -1,6 +1,5 @@
 import "./UploadPage.css";
 import axios from "axios";
-import { useEffect } from "react";
 import Header from "../components/header/Header";
 import Sidebar from "../components/sidebar/Sidebar";
 

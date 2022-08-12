@@ -1,11 +1,7 @@
 import React from "react";
 import "./book.css";
 import Sidebar from "../../components/sidebar/Sidebar";
-
-import { useEffect, useState } from "react";
-import axios from "axios";
-var flag = 0;
-let AuthorName = "";
+import { useState } from "react";
 
 export default function Book({SpecBook}) {
     const [rating, setRating] = useState(0);

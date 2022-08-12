@@ -82,7 +82,7 @@ function RegisterPage() {
     return (
         <section>
             <div className="img-bg">
-                <img src="./image.jpg" alt="Picture" />
+                <img src="./image.jpg" alt="anh"/>
             </div>
             <div className="icon">
                 <img src="./BookStore.png" alt="Logo" />

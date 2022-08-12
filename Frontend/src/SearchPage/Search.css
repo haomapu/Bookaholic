@@ -1,0 +1,22 @@
+.List {
+    display: flex;
+}
+
+.ListP {
+    padding: 20px;
+    flex: 9;
+}
+
+.ListTitle {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: lightcoral;
+    border-bottom: 10px solid #020102;
+    width: 60%;
+}
+
+.Result {
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}

@@ -18,7 +18,7 @@ function LoginPage() {
         var Username = arr[0].value;
         var Password = arr[1].value;
         var flag = 0;
-        account.map(check => {
+        account.map((check) => {
             if (
                 Username === check.username &&
                 Password === check.password &&
@@ -36,7 +36,7 @@ function LoginPage() {
     return (
         <section>
             <div className="img-bg">
-                <img src="./image.jpg" alt="Picture" />
+                <img src="./image.jpg" alt="anh" />
             </div>
             <div className="icon">
                 <img src="./BookStore.png" alt="Logo" />
