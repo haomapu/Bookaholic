@@ -6,6 +6,7 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 const userRoutes = require("./routes/user.js");
 const bookRoutes = require("./routes/book.js");
+const commentRoutes = require("./routes/comment.js");
 
 const app = express();
 const PORT = 8000;
@@ -23,6 +24,7 @@ app.use(morgan("common"));
 //ROUTES
 app.use("/user", userRoutes);
 app.use("/book", bookRoutes);
+app.use("/comment", commentRoutes);
 
 app.listen(PORT, () =>
     console.log(`Server is running on port: http://localhost:${PORT}`)

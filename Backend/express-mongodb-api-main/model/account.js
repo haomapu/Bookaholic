@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Book = require("./book");
-
+const Comment = require("./comment")
 const accountSchema = new mongoose.Schema({
 
     firstName: {
@@ -42,13 +42,27 @@ const accountSchema = new mongoose.Schema({
         type: String,
     },
 
+    books: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Book",
+        },
+    ],
+
     wishlist: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: Book,
+            ref: "Book",
             default: null
         },
-    ]
+    ],
+
+    comments: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Comment",
+        },
+    ],
 });
 
 let Account = mongoose.model("Account", accountSchema);
