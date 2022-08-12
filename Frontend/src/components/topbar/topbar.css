@@ -22,7 +22,21 @@
     flex: 6;
 }
 
-.topIcon {
+.topIconF {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #444;
+    cursor: pointer;
+}
+
+.topIconG {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #444;
+    cursor: pointer;
+}
+
+.topIconT {
     font-size: 20px;
     margin-right: 10px;
     color: #444;
