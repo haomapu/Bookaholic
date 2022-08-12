@@ -1,7 +1,16 @@
 import "./manageBooks.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function manageBooks({ book }) {
+    function deleteBook(test) {
+        let url = "http://localhost:8000/book/";
+        axios.delete(url + book._id, test);
+    }
+    function onClickBtnDeny() {
+        deleteBook(book);
+        window.location.reload();
+    }
     return (
         <div className="book">
             <img
@@ -23,7 +32,9 @@ export default function manageBooks({ book }) {
                         View
                     </Link>
                 </button>
-                <button className="buttonTitle">Delete</button>
+                <button className="buttonTitle" onClick={onClickBtnDeny}>
+                    Delete
+                </button>
             </div>
         </div>
     );
