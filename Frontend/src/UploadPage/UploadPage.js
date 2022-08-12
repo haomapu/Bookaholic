@@ -17,6 +17,7 @@ function UploadPage() {
 
     function onClickBtn() {
         var arr = document.getElementsByTagName("input");
+        link = arr[0].value;
         title = arr[1].value;
         author = arr[2].value;
         description = arr[3].value;
@@ -29,14 +30,10 @@ function UploadPage() {
             publishedDate: null,
             description: description,
             genre: categories,
-            author: author
+            author: author,
+            bookImg: link
         }    
         postBook(test)
-    }
-    
-    function AddPic(){
-        var arr = document.getElementsByTagName("input");
-        link = arr[0].value;        
     }
 
     return (
@@ -46,14 +43,9 @@ function UploadPage() {
                 <div className="uploadTitle">
                     <form className="Form">
                         <div className="content"> Upload</div>
-                        <div className="picture">
-                            <img src={link === "" ? "picture.jpg" : link} alt="" />
-                            <div className="form">
-                                <div className="input">
-                                    <input type="text" name="" placeholder="Please paste your link picture here"/>
-                                </div>
-                                <button type="add" onClick={AddPic}> Add Pic</button>
-                            </div>
+                        <h2> Picture</h2>
+                        <div className="input">
+                            <input type="text" name="" placeholder="Please paste your link picture here"/>
                         </div>
                         <h2> Title</h2>
                         <div className="input">
@@ -79,7 +71,7 @@ function UploadPage() {
                                 />
                             </h3>
                             <h3>
-                                Self help:
+                                Self-help:
                                 <input
                                     type="checkbox"
                                     id="option-b"
@@ -100,6 +92,70 @@ function UploadPage() {
                                     type="checkbox"
                                     id="option-d"
                                     value="Sport"
+                                />
+                            </h3>
+                            <h3>
+                                Study:
+                                <input
+                                    type="checkbox"
+                                    id="option-e"
+                                    value="Study"
+                                />
+                            </h3>
+                            <h3>
+                                Romance:
+                                <input
+                                    type="checkbox"
+                                    id="option-f"
+                                    value="Romance"
+                                />
+                            </h3>
+                            <h3>
+                                Mystery:
+                                <input
+                                    type="checkbox"
+                                    id="option-g"
+                                    value="Mystery"
+                                />
+                            </h3>
+                            <h3>
+                                History:
+                                <input
+                                    type="checkbox"
+                                    id="option-h"
+                                    value="History"
+                                />
+                            </h3>
+                            <h3>
+                                Stories:
+                                <input
+                                    type="checkbox"
+                                    id="option-i"
+                                    value="Stories"
+                                />
+                            </h3>
+                            <h3>
+                                Essays:
+                                <input
+                                    type="checkbox"
+                                    id="option-j"
+                                    value="Essays"
+                                />
+                            </h3>
+                            <h3>
+                                Cookbooks:
+                                <input
+                                    type="checkbox"
+                                    id="option-k"
+                                    value="Cookbooks"
+                                />
+                            </h3>
+                            <h3>
+                                Horror:
+                                <input
+                                    type="checkbox"
+                                    id="option-l"
+                                    value="Horror"
                                 />
                             </h3>
                         </div>
