@@ -5,6 +5,7 @@ import Sidebar from "../components/sidebar/Sidebar";
 
 function UploadPage() {
     var categories = [];
+    var link = "";
     var title = "";
     var author = "";
     var description = "";
@@ -16,9 +17,9 @@ function UploadPage() {
 
     function onClickBtn() {
         var arr = document.getElementsByTagName("input");
-        title = arr[0].value;
-        author = arr[1].value;
-        description = arr[2].value;
+        title = arr[1].value;
+        author = arr[2].value;
+        description = arr[3].value;
         document
             .querySelectorAll('input[type = "checkbox"]:checked')
             .forEach(cb => categories.push(cb.value));
@@ -31,21 +32,28 @@ function UploadPage() {
             author: author
         }    
         postBook(test)
-        console.log(test)
-        alert(title)
-        alert(author)
     }
     
+    function AddPic(){
+        var arr = document.getElementsByTagName("input");
+        link = arr[0].value;        
+    }
+
     return (
         <>
             <Header />
             <div className="upload">
                 <div className="uploadTitle">
                     <form className="Form">
-                        <span className="content"> Upload</span>
+                        <div className="content"> Upload</div>
                         <div className="picture">
-                            <img src="picture.jpg" alt="" />
-                            <button type="add"> Add Pic</button>
+                            <img src={link === "" ? "picture.jpg" : link} alt="" />
+                            <div className="form">
+                                <div className="input">
+                                    <input type="text" name="" placeholder="Please paste your link picture here"/>
+                                </div>
+                                <button type="add" onClick={AddPic}> Add Pic</button>
+                            </div>
                         </div>
                         <h2> Title</h2>
                         <div className="input">

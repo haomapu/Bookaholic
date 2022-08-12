@@ -7,7 +7,7 @@ function LoginPage() {
 
     useEffect(() => {
         const fetchAccount = async () => {
-            const res = await axios.get("http://localhost:5050/user");
+            const res = await axios.get("http://localhost:8000/user");
             setAccount(res.data);
         };
         fetchAccount();

@@ -1,5 +1,5 @@
 const Book = require("../model/book");
-
+const Account = require("../model/account");
 const bookController = {
 
     getAllBook : async (req,res) => {
@@ -15,6 +15,10 @@ const bookController = {
         try {
             const newBook = new Book(req.body);
             const savedBook = await newBook.save();
+            if(req.body.account){
+                const account = Account.findById(req.body.account);
+                await account.updateOne({$push: {books: savedBook._id}});
+            }   
             res.status(200).json(savedBook);
         }catch (err) {
             res.status(500).json(err);
@@ -23,7 +27,16 @@ const bookController = {
 
     getBook : async(req, res) => {
         try {
-            const book = await Book.findById(req.params.id);
+            const book = await Book.findById(req.params.id).populate("account").populate("comments");
+            res.status(200).json(book);
+        }catch (err) {
+            res.status(500).json(err);
+        }
+    },
+
+    getBookPending : async(req, res) => {
+        try {
+            const book = await Book.find({'pending': true});
             res.status(200).json(book);
         }catch (err) {
             res.status(500).json(err);
@@ -42,6 +55,8 @@ const bookController = {
 
     deleteBook : async (req, res) => {
         try {
+            await Account.updateMany({books:req.params.id}, {$pull : {books : req.params.id}});
+            await Comment.updateMany({book:req.params.id}, {$pull : {book : req.params.id}});
             const book = await Book.findByIdAndDelete(req.params.id);
             res.status(200).json("Delete Successfully");
         }catch(err) {
