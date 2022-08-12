@@ -153,15 +153,15 @@ section{
   align-items: center;
 }
 
-.contentLogin .form .icon li:nth-child(1){
+.topIconF{
   color: #3b5999;
 }
 
-.contentLogin .form .icon li:nth-child(2){
+.topIconG{
   color: #dd4b39;
 }
 
-.contentLogin .form .icon li:nth-child(3){
+.topIconT{
   color: #55acee;
 }
 

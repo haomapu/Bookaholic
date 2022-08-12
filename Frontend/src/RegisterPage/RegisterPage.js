@@ -42,7 +42,7 @@ function RegisterPage() {
         if (
             (Firstname.length > 16 ||
                 Lastname.length > 16 ||
-                Email.length > 16 ||
+                Email.length > 32 ||
                 Username.length > 16 ||
                 Password.length > 16 ||
                 ConfirmPass.length > 16) &&

@@ -37,15 +37,17 @@ function UploadPage() {
             alert("Can't fill blank description");
             flag = 1
         }
-        var test = {
-            title: title,
-            publishedDate: null,
-            description: description,
-            genre: categories,
-            author: author,
-            bookImg: link
+        if(flag === 0){
+            var test = {
+                title: title,
+                publishedDate: null,
+                description: description,
+                genre: categories,
+                author: author,
+                bookImg: link
+            }
+            postBook(test)
         }    
-        postBook(test)
     }
 
     return (
