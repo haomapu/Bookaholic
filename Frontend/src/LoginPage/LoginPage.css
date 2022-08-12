@@ -1,177 +1,175 @@
-*{
-  margin:0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 
-section{
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
 }
 
 /*Logo*/
 .icon {
-  position: relative;
-  width: 45%;
-  height: 100%;
+    position: relative;
+    width: 45%;
+    height: 100%;
 }
 
-.icon img{
-  position: absolute;
-  bottom: 73%;
-  left: 210%;
-  width: 40%;
-  height: 35%;
-  object-fit: cover;
+.icon img {
+    position: absolute;
+    bottom: 73%;
+    left: 210%;
+    width: 40%;
+    height: 35%;
+    object-fit: cover;
 }
 
 /*Image page*/
-.img-bg{
-  position: relative;
-  width: 70%;
-  height: 100%;
+.img-bg {
+    position: relative;
+    width: 70%;
+    height: 100%;
 }
 
-.img-bg img{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.img-bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.contentLogin{
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  width: 70%;
-  height: 100%;
+.contentLogin {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 70%;
+    height: 100%;
 }
 
-.contentLogin .form{
-  width: 50%;
+.contentLogin .form {
+    width: 50%;
 }
 
 /*Sign in*/
-.contentLogin .form h2{
-  color: #607d8b;
-  font-weight: 600;
-  font-size: 1.5em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  border-bottom: 4px solid #ff4584;
-  display: inline-block;
-  letter-spacing: 1px;
+.contentLogin .form h2 {
+    color: #607d8b;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #ff4584;
+    display: inline-block;
+    letter-spacing: 1px;
 }
 
-.contentLogin .form .input{
-  margin-bottom: 20px;
+.contentLogin .form .input {
+    margin-bottom: 20px;
 }
 
 /*Username and password*/
-.contentLogin .form .input span{
-  font-size: 16px;
-  margin-bottom: 5px;
-  display: inline-block;
-  color: #607db8;
-  letter-spacing: 1px;
+.contentLogin .form .input span {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #607db8;
+    letter-spacing: 1px;
 }
 
 /*Remember*/
-.contentLogin .form .remember{
-  margin-bottom: 10px;
-  color: #607d8b;
-  font-size: 14px;
+.contentLogin .form .remember {
+    margin-bottom: 10px;
+    color: #607d8b;
+    font-size: 14px;
 }
 
-.contentLogin .form .input input{
-  width: 100%;
-  padding: 10px 20px;
-  outline: none;
-  border: 1px solid #607d8b;
-  font-size: 16px;
-  letter-spacing: 1px;
-  color: #607d8b;
-  background: transparent;
-  border-radius: 30px;
+.contentLogin .form .input input {
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    border: 1px solid #607d8b;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #607d8b;
+    background: transparent;
+    border-radius: 30px;
 }
 
-.contentLogin .form .input button[type="submit"]{
-  width: 100%;
-  padding: 10px 20px;
-  background: #ff4584;
-  color: #fff;
-  outline: none;
-  border: none;
-  font-size: 16px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.12),
-             0 2px 2px rgba(0,0,0,0.12),
-             0 4px 4px rgba(0,0,0,0.12),
-            0 8px 8px rgba(0,0,0,0.12),
-            0 16px 16px rgba(0,0,0,0.12);
-  border-radius: 30px;
+.contentLogin .form .input button[type="submit"] {
+    width: 100%;
+    padding: 10px 20px;
+    background: #ff4584;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+        0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+        0 16px 16px rgba(0, 0, 0, 0.12);
+    border-radius: 30px;
 }
 
-.contentLogin .form .input input[type="submit"]:hover{
-  background: #f53677;
+.contentLogin .form .input input[type="submit"]:hover {
+    background: #f53677;
 }
 
-.contentLogin .form .input p{
-  color: #607d8b;
+.contentLogin .form .input p {
+    color: #607d8b;
 }
 
-.contentLogin .form .input p a{
-  color: #ff4584;
+.contentLogin .form .input p a {
+    color: #ff4584;
 }
 
-.contentLogin .form h3{
-  color: #607d8b;
-  text-align: center;
-  margin: 80px 0 10px;
-  font-weight: 500;
+.contentLogin .form h3 {
+    color: #607d8b;
+    text-align: center;
+    margin: 80px 0 10px;
+    font-weight: 500;
 }
 
-.contentLogin .form .icon{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+.contentLogin .form .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-.contentLogin .form .icon li{
-  list-style: none;
-  cursor: pointer;
-  width: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.contentLogin .form .icon li {
+    list-style: none;
+    cursor: pointer;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.topIconF{
-  color: #3b5999;
+.topIconF {
+    color: #3b5999;
 }
 
-.topIconG{
-  color: #dd4b39;
+.topIconG {
+    color: #dd4b39;
 }
 
-.topIconT{
-  color: #55acee;
+.topIconT {
+    color: #55acee;
 }
 
-.contentLogin .form .icon li i{
-  font-size: 24px;
+.contentLogin .form .icon li i {
+    font-size: 24px;
 }
 
-.contentLogin .form .footer{
-  text-align: center;
-  margin: 80px 0 10px;
-  font-weight: 200;
-  font-size: 20px;
+.contentLogin .form .footer {
+    text-align: center;
+    margin: 80px 0 10px;
+    font-weight: 200;
+    font-size: 20px;
 }
