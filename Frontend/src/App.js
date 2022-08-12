@@ -47,10 +47,7 @@ function App() {
                     element={currentUser ? <WishList /> : <LoginPage />}
                 />
 
-                <Route
-                    path="/search"
-                    element={<Search />}
-                />
+                <Route path="/search" element={<Search />} />
             </Routes>
         </Router>
     );
