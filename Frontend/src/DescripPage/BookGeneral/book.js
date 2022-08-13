@@ -1,11 +1,40 @@
 import React from "react";
 import "./book.css";
 import Sidebar from "../../components/sidebar/Sidebar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Book({ SpecBook }) {
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
+    const [avgRating, setAvgRating] = useState()
+    const url = "http://localhost:8000/book/" + SpecBook._id;
+
+    useEffect(() => {
+        const fetchRate = async () => {
+            const res = await axios.get(url);
+            setAvgRating(res.data.rating);
+        };
+        fetchRate();
+    }, [url]);
+    
+    function rate(rating) {
+        axios.get(url).then(res => {
+            const temp = res.data.rating;
+            temp.push(rating);
+            const test = {
+                rating: temp,
+            };
+            axios.put(url, test);
+        });
+    }
+    function avg(){
+        let sum = 0
+        for (let i = 0; i < avgRating.length; i++){
+            sum += avgRating[i];
+        }
+        return sum/avgRating.length
+    }
 
     const StarRating = () => {
         return (
@@ -19,15 +48,17 @@ export default function Book({ SpecBook }) {
                             className={
                                 index <= (hover || rating) ? "on" : "off"
                             }
-                            onClick={() => setRating(index)}
+                            
                             onMouseEnter={() => setHover(index)}
                             onMouseLeave={() => setHover(rating)}
+                            onClick={() => {setRating(index);
+                                rate(index);}}
                         >
                             <span className="star">&#9733;</span>
                         </button>
                     );
                 })}
-                <span className="rating">({rating})</span>
+                <span className="rating">({avgRating? avg(avgRating).toFixed(2) : 0})</span>
             </div>
         );
     };
