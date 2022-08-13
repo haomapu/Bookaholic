@@ -52,7 +52,8 @@
     margin-top: 10px;
     background-color: pink;
     font-weight: bold;
-    border-radius: 10%
+    border-radius: 10%;
+    cursor: pointer;
 }
 
 .rateStar button {
@@ -61,19 +62,19 @@
     border: none;
     outline: none;
     cursor: pointer;
-  }
-  .on {
+}
+.on {
     color: orange;
-  }
-  .off {
+}
+.off {
     color: #ccc;
 }
 
-.text{
+.text {
     width: 100%;
 }
 
-.read-or-hide{
-color: rgb(192,192,192);
-cursor: pointer;
+.read-or-hide {
+    color: rgb(192, 192, 192);
+    cursor: pointer;
 }

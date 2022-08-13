@@ -1,7 +1,22 @@
 import "./manageWishList.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function manageWishList({ wishBook }) {
+    const onClickBtn = () => {
+        const id = localStorage.getItem("id");
+        let url = "http://localhost:8000/user/" + id;
+        axios.get(url).then(res => {
+            const temp = res.data.wishlist;
+            temp.pop(wishBook);
+            const test = {
+                wishlist: temp,
+            };
+            console.log(test);
+            axios.put(url, test);
+            window.location.reload();
+        });
+    };
     return (
         <div className="wishBook">
             <Link className="link" to={"/book/" + wishBook.title}>
@@ -26,7 +41,9 @@ export default function manageWishList({ wishBook }) {
                 </span>
             </div>
             <div className="RButtons">
-                <button className="RButtonTitle">Remove</button>
+                <button className="RButtonTitle" onClick={onClickBtn}>
+                    Remove
+                </button>
             </div>
         </div>
     );
