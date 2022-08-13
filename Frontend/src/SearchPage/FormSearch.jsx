@@ -1,6 +1,15 @@
 import "./FormSearch.css";
 
 export default function FormSearch() {
+    function onClickBtn() {
+        var arr = document.getElementsByTagName("input");
+        const title = arr[0].value;
+        // document
+        //     .querySelectorAll('input[type = "checkbox"]:checked')
+        //     .forEach(cb => categories.push(cb.value));
+        localStorage.setItem("title", title);
+    }
+
     return (
         <div>
             <form className="FormSearch">
@@ -12,7 +21,9 @@ export default function FormSearch() {
                                 <input type="text" name="" />
                             </div>
                             <div className="searchBut">
-                                <button type="Search">Search</button>
+                                <button type="Search" onClick={onClickBtn}>
+                                    Search
+                                </button>
                             </div>
                         </div>
                     </div>

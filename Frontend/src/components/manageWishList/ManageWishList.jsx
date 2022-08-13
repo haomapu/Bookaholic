@@ -5,11 +5,7 @@ export default function manageWishList({ wishBook }) {
     return (
         <div className="wishBook">
             <Link className="link" to={"/book/" + wishBook.title}>
-                <img
-                    className="wishBookImg"
-                    src="https://i1.rgstatic.net/publication/356640995_Data_Structures_and_Algorithms_Made_Easy/links/61a62f816864311d938ab8d4/largepreview.png"
-                    alt=""
-                />
+                <img className="wishBookImg" src={wishBook.bookImg} alt="" />
             </Link>
             <div className="wishBookInfo">
                 <span className="wishBookTitle">
