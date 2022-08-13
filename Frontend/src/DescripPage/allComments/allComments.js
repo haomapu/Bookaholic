@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function AllComments({cmt}) {
-  console.log(cmt)
   const [data, setData] = useState()
   useEffect(() => {
     const fetchCmt = async () => {
