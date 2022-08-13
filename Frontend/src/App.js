@@ -13,8 +13,8 @@ import About from "./About/About";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-    const currentUser = true;
-
+    const user = localStorage.getItem("username");
+    const admin = localStorage.getItem("admin");
     return (
         <Router>
             <TopBar />
@@ -22,11 +22,11 @@ function App() {
                 <Route exact path="/" element={<Homepage />} />
                 <Route
                     path="/login"
-                    element={currentUser ? <Homepage /> : <LoginPage />}
+                    element={user ? <Homepage /> : <LoginPage />}
                 />
                 <Route
                     path="/register"
-                    element={currentUser ? <Homepage /> : <RegisterPage />}
+                    element={user ? <Homepage /> : <RegisterPage />}
                 />
                 <Route
                     path="/about"
@@ -34,22 +34,24 @@ function App() {
                 />
                 <Route
                     path="/settings"
-                    element={currentUser ? <Settings /> : <LoginPage />}
+                    element={user ? <Settings /> : <LoginPage />}
                 />
                 <Route
                     path="/upload"
-                    element={currentUser ? <Upload /> : <LoginPage />}
+                    element={user && admin === "0" ? <Upload /> : <LoginPage />}
                 />
                 <Route
                     path="/manage"
-                    element={currentUser ? <Manage /> : <LoginPage />}
+                    element={user && admin === "1" ? <Manage /> : <LoginPage />}
                 />
 
                 <Route path="/book/:id" element={<DescripPage />} />
 
                 <Route
                     path="/wishlist"
-                    element={currentUser ? <WishList /> : <LoginPage />}
+                    element={
+                        user && admin === "0" ? <WishList /> : <LoginPage />
+                    }
                 />
 
                 <Route path="/search" element={<Search />} />

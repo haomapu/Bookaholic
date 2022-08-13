@@ -25,7 +25,7 @@ function DescripPage() {
             <Header />
             <Book SpecBook={BookInfo.length === 0? BookInfo : Onebook}/>
             <Recommend />
-            <Comment />
+            <Comment book={BookInfo.length === 0? BookInfo : Onebook}/>
         </div>
     );
 }

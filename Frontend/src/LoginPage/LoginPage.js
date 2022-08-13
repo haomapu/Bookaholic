@@ -24,7 +24,10 @@ function LoginPage() {
                 Password === check.password &&
                 flag === 0
             ) {
-                alert("Login successful!");
+                // alert("Login successful!");
+                localStorage.setItem("password", check.password);
+                localStorage.setItem("username", check.username);
+                localStorage.setItem("admin", check.admin);
                 flag = 1;
             }
             return null;

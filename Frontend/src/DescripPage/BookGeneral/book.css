@@ -68,3 +68,12 @@
   .off {
     color: #ccc;
 }
+
+.text{
+    width: 100%;
+}
+
+.read-or-hide{
+color: rgb(192,192,192);
+cursor: pointer;
+}
