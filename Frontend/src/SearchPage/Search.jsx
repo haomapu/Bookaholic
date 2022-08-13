@@ -1,7 +1,6 @@
 import "./Search.css";
 import Sidebar from "../components/sidebar/Sidebar";
 import Book from "../components/books/book";
-import Post from "../components/post/Post";
 import Header from "../components/header/Header";
 import { useEffect, useState } from "react";
 import axios from "axios";
