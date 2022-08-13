@@ -17,7 +17,11 @@ export default function TopBar() {
                             HOME
                         </Link>
                     </li>
-                    <li className="topListItem">ABOUT</li>
+                    <li className="topListItem">
+                        <Link className="link" to="/about">
+                            ABOUT
+                        </Link>
+                    </li>
                     <li className="topListItem">CONTACT</li>
                     <>
                         {user && (
