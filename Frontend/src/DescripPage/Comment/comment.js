@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 export default function Comment({book}) {
   const [cmt, setCmt] = useState()
   const [textInput, setTextInput] = useState("")
-
+  const id = localStorage.getItem("id")
   const onTextInputchange = (e) => {
     setTextInput(e.target.value);
   }  
@@ -17,11 +17,11 @@ export default function Comment({book}) {
     const test = {
       description: cmt,
       book: book._id,
-      user: '62f7086cc2db18080d236e4d'
+      user: id
     }
     postCmt(test)
   }
-  //console.log(book)
+
   function postCmt(test) {
     let url = "http://localhost:8000/comment/";
     axios.post(url , test);
