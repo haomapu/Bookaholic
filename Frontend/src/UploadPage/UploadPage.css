@@ -81,21 +81,11 @@
 }
 
 .tick input[type="checkbox"] {
-    /* display: flex;
-    width: 20px;
-    align-items: center;
-    background-color: #ffffff;
-    color: black;
-    margin-left: 60px;
-    cursor: pointer; */
     margin: 10px;
     display: flex;
 }
 
 .tick h3 {
-    /* font-size: 15px;
-    width: 50%;
-    margin-left: 20px; */
     display: inline-block;
     width: 15%;
     margin-top: 15px;

@@ -2,6 +2,7 @@ import "./UploadPage.css";
 import axios from "axios";
 import Header from "../components/header/Header";
 import Sidebar from "../components/sidebar/Sidebar";
+import { useEffect, useState } from "react";
 
 function UploadPage() {
     var categories = [];
@@ -9,11 +10,20 @@ function UploadPage() {
     var title = "";
     var author = "";
     var description = "";
-    
 
     function postBook(test) {
         axios.post("http://localhost:8000/book/", test)
     }
+
+    const [book, setBook] = useState("");
+
+    useEffect(() => {
+        const fetchBook = async () => {
+            const res = await axios.get("http://localhost:8000/book");
+            setBook(res.data);
+        };
+        fetchBook();
+    }, []);
 
     function onClickBtn() {
         var arr = document.getElementsByTagName("input");
@@ -25,27 +35,42 @@ function UploadPage() {
             .querySelectorAll('input[type = "checkbox"]:checked')
             .forEach(cb => categories.push(cb.value));
         var flag = 0;
-        if(title === ""){
+
+        book.map(check => {
+            if (title === check.title && flag === 0) {
+                alert("Book already exists!");
+                flag = 1;
+            }
+            return null;
+        });
+
+        if(title === "" && flag === 0){
             alert("Can't fill blank title");
             flag = 1
         }
-        if(author === ""){
+        if(author === "" && flag === 0){
             alert("Can't fill blank author");
             flag = 1
         }
-        if(description === ""){
+        if(description === "" && flag === 0){
             alert("Can't fill blank description");
             flag = 1
         }
-        var test = {
-            title: title,
-            publishedDate: null,
-            description: description,
-            genre: categories,
-            author: author,
-            bookImg: link
+        if (title.length > 100 && flag === 0){
+            alert("Title must not exceed 100 characters!");
+            flag = 1
+        }
+        if(flag === 0){
+            var test = {
+                title: title,
+                publishedDate: null,
+                description: description,
+                genre: categories,
+                author: author,
+                bookImg: link
+            }
+            postBook(test)
         }    
-        postBook(test)
     }
 
     return (

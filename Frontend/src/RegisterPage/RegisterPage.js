@@ -40,15 +40,19 @@ function RegisterPage() {
         }
 
         if (
-            (Firstname.length > 16 ||
-                Lastname.length > 16 ||
-                Email.length > 16 ||
-                Username.length > 16 ||
-                Password.length > 16 ||
-                ConfirmPass.length > 16) &&
+            (Firstname.length > 30 ||
+                Lastname.length > 30 ||
+                Username.length > 30 ||
+                Password.length > 30 ||
+                ConfirmPass.length > 30) &&
             flag === 0
         ) {
-            alert("Must not exceed 16 characters!");
+            alert("Must not exceed 30 characters!");
+            flag = 2;
+        }
+        if (Email.length > 40 && flag === 0)
+        {
+            alert("Email must not exceed 40 characters!");
             flag = 2;
         }
 
@@ -59,6 +63,11 @@ function RegisterPage() {
             }
             return null;
         });
+
+        if ((Password.length < 6 || Password.length > 30) && flag === 0) {
+            alert("Not suitable for password!");
+            flag = 4;
+        }
 
         if (Password !== ConfirmPass && flag === 0) {
             alert("Entered the wrong password!");
@@ -120,7 +129,7 @@ function RegisterPage() {
                             <input
                                 type="text"
                                 name=""
-                                placeholder="Enter username"
+                                placeholder="Enter username 0 - 30 characters"
                             />
                         </div>
                         <div className="input">
@@ -128,7 +137,7 @@ function RegisterPage() {
                             <input
                                 type="currentpassword"
                                 name=""
-                                placeholder="Enter password"
+                                placeholder="Enter password 6 - 30 characters"
                             />
                         </div>
                         <div className="input">
