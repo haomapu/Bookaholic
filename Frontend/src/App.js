@@ -12,7 +12,7 @@ import Search from "./SearchPage/Search";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-    const currentUser = false;
+    const currentUser = true;
 
     return (
         <Router>
