@@ -32,6 +32,25 @@ export default function Book({ SpecBook }) {
         );
     };
 
+    const ReadMore = ({ children }) => {
+        const text = children;
+        
+        const [isReadMore, setIsReadMore] = useState(true);
+        const toggleReadMore = () => {
+          setIsReadMore(!isReadMore);
+        };
+        if (text == null)
+            return;
+        return (
+          <p className="text">
+            {isReadMore? text.slice(0, 150) : text}
+            <span onClick={toggleReadMore} className="read-or-hide">
+              {isReadMore ? "...read more" : " show less"}
+            </span>
+          </p>
+        );
+      };
+
     return (
         <div className="BookDes">
             <img
@@ -42,7 +61,11 @@ export default function Book({ SpecBook }) {
             <div className="Des">
                 <span className="Title">{SpecBook.title}</span>
                 <span className="Author">Author: {SpecBook.author}</span>
-                <span className="Description">{SpecBook.description}</span>
+                    <span className="Description">
+                    <ReadMore>    
+                        {SpecBook.description}
+                    </ReadMore>
+                </span>
                 <div>
                     <div className="Fav">
                         <button className="FavBut">Wishlist</button>
