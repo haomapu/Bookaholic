@@ -2,10 +2,25 @@ import React from "react";
 import "./book.css";
 import Sidebar from "../../components/sidebar/Sidebar";
 import { useState } from "react";
+import axios from "axios";
 
 export default function Book({ SpecBook }) {
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
+    const onClickBtn = () => {
+        const id = localStorage.getItem("id");
+        let url = "http://localhost:8000/user/" + id;
+
+        axios.get(url).then(res => {
+            const temp = res.data.wishlist;
+            temp.push(SpecBook);
+            const test = {
+                wishlist: temp,
+            };
+            axios.put(url, test);
+            window.location.reload();
+        });
+    };
 
     const StarRating = () => {
         return (
@@ -34,22 +49,21 @@ export default function Book({ SpecBook }) {
 
     const ReadMore = ({ children }) => {
         const text = children;
-        
+
         const [isReadMore, setIsReadMore] = useState(true);
         const toggleReadMore = () => {
-          setIsReadMore(!isReadMore);
+            setIsReadMore(!isReadMore);
         };
-        if (text == null)
-            return;
+        if (text == null) return;
         return (
-          <p className="text">
-            {isReadMore? text.slice(0, 150) : text}
-            <span onClick={toggleReadMore} className="read-or-hide">
-              {isReadMore ? "...read more" : " show less"}
-            </span>
-          </p>
+            <p className="text">
+                {isReadMore ? text.slice(0, 150) : text}
+                <span onClick={toggleReadMore} className="read-or-hide">
+                    {isReadMore ? "...read more" : " show less"}
+                </span>
+            </p>
         );
-      };
+    };
 
     return (
         <div className="BookDes">
@@ -61,14 +75,14 @@ export default function Book({ SpecBook }) {
             <div className="Des">
                 <span className="Title">{SpecBook.title}</span>
                 <span className="Author">Author: {SpecBook.author}</span>
-                    <span className="Description">
-                    <ReadMore>    
-                        {SpecBook.description}
-                    </ReadMore>
+                <span className="Description">
+                    <ReadMore>{SpecBook.description}</ReadMore>
                 </span>
                 <div>
                     <div className="Fav">
-                        <button className="FavBut">Wishlist</button>
+                        <button className="FavBut" onClick={onClickBtn}>
+                            Wishlist
+                        </button>
                     </div>
                     <div className="rateStar">
                         <StarRating />
