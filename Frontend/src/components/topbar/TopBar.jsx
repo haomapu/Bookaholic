@@ -2,7 +2,13 @@ import { Link } from "react-router-dom";
 import "./topbar.css";
 
 export default function TopBar() {
-    const user = true;
+    const user = localStorage.getItem("username");
+    const admin = localStorage.getItem("admin");
+
+    const handleClick = () => {
+        localStorage.clear();
+        window.location.reload();
+    };
     return (
         <div className="top">
             <div className="topLeft">
@@ -20,7 +26,7 @@ export default function TopBar() {
                     <li className="topListItem">ABOUT</li>
                     <li className="topListItem">CONTACT</li>
                     <>
-                        {user && (
+                        {user && admin === "0" && (
                             <li className="topListItem">
                                 <Link className="link" to="/wishlist">
                                     WISHLIST
@@ -29,7 +35,7 @@ export default function TopBar() {
                         )}
                     </>
                     <>
-                        {user && (
+                        {user && admin === "0" && (
                             <li className="topListItem">
                                 <Link className="link" to="/upload">
                                     UPLOAD
@@ -38,7 +44,7 @@ export default function TopBar() {
                         )}
                     </>
                     <>
-                        {user && (
+                        {user && admin === "1" && (
                             <li className="topListItem">
                                 <Link className="link" to="/manage">
                                     MANAGE
@@ -49,7 +55,11 @@ export default function TopBar() {
                     <>
                         {user && (
                             <li className="topListItem">
-                                <Link className="link" to="/">
+                                <Link
+                                    className="link"
+                                    to="/"
+                                    onClick={handleClick}
+                                >
                                     LOGOUT
                                 </Link>
                             </li>
