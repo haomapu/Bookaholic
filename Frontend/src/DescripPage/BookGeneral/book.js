@@ -1,7 +1,6 @@
 import React from "react";
 import "./book.css";
 import Sidebar from "../../components/sidebar/Sidebar";
-import { useState } from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -22,7 +21,7 @@ export default function Book({ SpecBook }) {
             window.location.reload();
         });
     };
-    const [avgRating, setAvgRating] = useState()
+    const [avgRating, setAvgRating] = useState();
     const url = "http://localhost:8000/book/" + SpecBook._id;
 
     useEffect(() => {
@@ -32,7 +31,7 @@ export default function Book({ SpecBook }) {
         };
         fetchRate();
     }, [url]);
-    
+
     function rate(rating) {
         axios.get(url).then(res => {
             const temp = res.data.rating;
@@ -43,12 +42,12 @@ export default function Book({ SpecBook }) {
             axios.put(url, test);
         });
     }
-    function avg(){
-        let sum = 0
-        for (let i = 0; i < avgRating.length; i++){
+    function avg() {
+        let sum = 0;
+        for (let i = 0; i < avgRating.length; i++) {
             sum += avgRating[i];
         }
-        return sum/avgRating.length
+        return sum / avgRating.length;
     }
 
     const StarRating = () => {
@@ -63,17 +62,20 @@ export default function Book({ SpecBook }) {
                             className={
                                 index <= (hover || rating) ? "on" : "off"
                             }
-                            
                             onMouseEnter={() => setHover(index)}
                             onMouseLeave={() => setHover(rating)}
-                            onClick={() => {setRating(index);
-                                rate(index);}}
+                            onClick={() => {
+                                setRating(index);
+                                rate(index);
+                            }}
                         >
                             <span className="star">&#9733;</span>
                         </button>
                     );
                 })}
-                <span className="rating">({avgRating? avg(avgRating).toFixed(2) : 0})</span>
+                <span className="rating">
+                    ({avgRating ? avg(avgRating).toFixed(2) : 0})
+                </span>
             </div>
         );
     };
