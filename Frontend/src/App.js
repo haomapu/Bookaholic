@@ -8,7 +8,6 @@ import Manage from "./pages/managepage/Manage";
 import WishList from "./pages/wishlistpage/WishList";
 import Upload from "./UploadPage/UploadPage";
 import Search from "./SearchPage/Search";
-import About from "./About/About";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -27,10 +26,6 @@ function App() {
                 <Route
                     path="/register"
                     element={user ? <Homepage /> : <RegisterPage />}
-                />
-                <Route
-                    path="/about"
-                    element={currentUser ? <Homepage /> : <About />}
                 />
                 <Route
                     path="/settings"
