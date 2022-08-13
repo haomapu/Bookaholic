@@ -17,7 +17,7 @@ export default function Manage() {
         <>
             <div className="wishList">
                 <div className="wishListP">
-                    <span className="wishListTitle">WishList</span>
+                    <div className="wishListTitle">WishList</div>
                     <div className="wishListBook">
                         {wishList.map((b, i) => (
                             <ManageWishList wishBook={b} key={i} />

@@ -28,7 +28,6 @@ export default function TopBar() {
                             ABOUT
                         </Link>
                     </li>
-                    <li className="topListItem">CONTACT</li>
                     <>
                         {user && admin === "0" && (
                             <li className="topListItem">

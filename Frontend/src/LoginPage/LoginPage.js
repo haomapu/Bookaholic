@@ -28,6 +28,7 @@ function LoginPage() {
                 localStorage.setItem("password", check.password);
                 localStorage.setItem("username", check.username);
                 localStorage.setItem("admin", check.admin);
+                localStorage.setItem("email", check.email);
                 flag = 1;
             }
             return null;

@@ -7,7 +7,7 @@ export default function Sidebar() {
             <div className="sidebarItem">
                 <span className="sidebarTitle">ABOUT US</span>
                 <img
-                    src="https://icdn.dantri.com.vn/thumb_w/770/2022/05/30/iu-11-1653887051969.jpg"
+                    src="https://th.bing.com/th/id/OIP.v2Cssq8tUeqA21AtHtrpFQHaFj?w=224&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
                     height="433"
                     width="236"
                     frameBorder="0"
@@ -54,9 +54,9 @@ export default function Sidebar() {
             <div className="sidebarItem">
                 <span className="sidebarTitle">FOLLOW US</span>
                 <div className="sidebarSocial">
-                    <i className="sidebarIcon fa-brands fa-facebook-square"></i>
-                    <i className="sidebarIcon fa-brands fa-google"></i>
-                    <i className="sidebarIcon fa-brands fa-twitter-square"></i>
+                    <i className="sidebarIconF fa-brands fa-facebook-square"></i>
+                    <i className="sidebarIconG fa-brands fa-google"></i>
+                    <i className="sidebarIconT fa-brands fa-twitter-square"></i>
                 </div>
             </div>
         </div>

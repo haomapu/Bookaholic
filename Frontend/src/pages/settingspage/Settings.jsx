@@ -2,6 +2,9 @@ import "./settings.css";
 import Sidebar from "../../components/sidebar/Sidebar";
 
 export default function Setting() {
+    const user = localStorage.getItem("username")
+    const password = localStorage.getItem("password")
+    const email = localStorage.getItem("email")
     return (
         <div className="settings">
             <div className="settingsWrapper">
@@ -28,14 +31,14 @@ export default function Setting() {
                         />
                     </div>
                     <label>Username</label>
-                    <input type="text" placeholder="maihoang215" />
+                    <input type="text" placeholder={user} />
                     <label>Email</label>
                     <input
                         type="email"
-                        placeholder="maihoang2152002@gmail.com"
+                        placeholder={email}
                     />
                     <label>Password</label>
-                    <input type="password" />
+                    <input type="password" placeholder={password}/>
                     <button className="settingsSubmit">Update</button>
                 </form>
             </div>

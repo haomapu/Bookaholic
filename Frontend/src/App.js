@@ -30,7 +30,7 @@ function App() {
                 />
                 <Route
                     path="/about"
-                    element={currentUser ? <Homepage /> : <About />}
+                    element={user ? <Homepage /> : <About />}
                 />
                 <Route
                     path="/settings"
