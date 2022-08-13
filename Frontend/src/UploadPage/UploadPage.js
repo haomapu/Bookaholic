@@ -56,8 +56,8 @@ function UploadPage() {
             alert("Can't fill blank description");
             flag = 1
         }
-        if (title.length > 100 && flag === 0){
-            alert("Title must not exceed 100 characters!");
+        if (title.length > 30 && flag === 0){
+            alert("Title must not exceed 30 characters!");
             flag = 1
         }
         if(flag === 0){
