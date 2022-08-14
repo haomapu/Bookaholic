@@ -21,6 +21,7 @@ export default function Book({ SpecBook }) {
             window.location.reload();
         });
     };
+    // console.log(SpecBook);
     const [avgRating, setAvgRating] = useState();
     const url = "http://localhost:8000/book/" + SpecBook._id;
 

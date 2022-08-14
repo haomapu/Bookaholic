@@ -2,7 +2,7 @@ import Book from "./BookGeneral/book";
 import Header from "../components/header/Header";
 import Comment from "./Comment/comment";
 import Recommend from "./recommend/Recommend";
-import { useParams } from 'react-router-dom'
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -15,17 +15,21 @@ function DescripPage() {
         };
         fetchInfo();
     }, []);
-    var Onebook
-    const { id } = useParams()
-    if (BookInfo.length !== 0) {
-        Onebook = BookInfo.find(item => item.title === id);
-    }
+
+    const { id } = useParams();
+
     return (
         <div>
             <Header />
-            <Book SpecBook={BookInfo.length === 0? BookInfo : Onebook}/>
+            {BookInfo.map((p, i) => {
+                if (p.title === id) return <Book SpecBook={p} key={i} />;
+                return null;
+            })}
             <Recommend />
-            <Comment book={BookInfo.length === 0? BookInfo : Onebook}/>
+            {BookInfo.map((p, i) => {
+                if (p.title === id) return <Comment book={p} key={i} />;
+                return null;
+            })}
         </div>
     );
 }
