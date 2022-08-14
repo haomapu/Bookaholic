@@ -5,27 +5,29 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function Comment({ book }) {
-    const [cmt, setCmt] = useState();
+    let cmt;
     const [textInput, setTextInput] = useState("");
     const id = localStorage.getItem("id");
     const onTextInputchange = e => {
         setTextInput(e.target.value);
     };
 
+    function postCmt(test) {
+        axios.post("http://localhost:8000/comment/", test);
+    }
+
     const onClickBtn = e => {
-        setCmt(textInput);
+        cmt = textInput;
+        console.log(cmt);
+
         const test = {
             description: cmt,
             book: book._id,
             user: id,
         };
         postCmt(test);
+        window.location.reload();
     };
-
-    function postCmt(test) {
-        let url = "http://localhost:8000/comment/";
-        axios.post(url, test);
-    }
 
     const [data, setData] = useState();
 

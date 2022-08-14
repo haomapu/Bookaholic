@@ -33,9 +33,11 @@ export default function Manage() {
                     <div className="management">
                         <span className="managementTitle">Management</span>
                         <div className="listBook">
-                            {books.map((b, i) => (
-                                <ManageBooks book={b} key={i} />
-                            ))}
+                            {books.map((b, i) => {
+                                if (b.pending === true)
+                                    return <ManageBooks book={b} key={i} />;
+                                return null;
+                            })}
                         </div>
                     </div>
                 </div>
